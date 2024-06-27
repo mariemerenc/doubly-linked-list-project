@@ -1,0 +1,61 @@
+\href{https://classroom.github.com/a/DJ49M4cg}{\texttt{ }} \hypertarget{md_README_autotoc_md5}{}\doxysection{Introduction}\label{md_README_autotoc_md5}
+This programming project provides unit tests for the {\ttfamily sc\+::list$<$$>$} class. A description of the assignment can be found \href{docs/projeto_ED_list.pdf}{\texttt{ {\bfseries{here}}}}.\hypertarget{md_README_autotoc_md6}{}\doxysection{Organization}\label{md_README_autotoc_md6}
+The folders and files of this project are the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily source/tmanager\+\_\+lib}\+: This is the library that provides supports for the unit tests. Do not change or delete this folder.
+\item {\ttfamily source/tests}\+: This folder has the file {\ttfamily main.\+cpp} that contains all the tests. You might want to change this file and comment out some of the tests while you have not finished all the {\ttfamily sc\+::list}\textquotesingle{}s methods.
+\item {\ttfamily source/include}\+: This is the folder in which you should add the {\ttfamily list.\+h} file with your solution (i.\+e. the implementation of the class {\ttfamily sc\+::list}).
+\item {\ttfamily source/\+CMake\+Lists.\+txt\+: The cmake script file. $\ast$}README.\+md$<$tt$>$\+: This file. $\ast$docs\`{}\+: This folder has a pdf describing the list project.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md7}{}\doxysection{Compiling}\label{md_README_autotoc_md7}
+This project may be compiled with \href{https://cmake.org}{\texttt{ CMake}}. CMake is an open-\/source, cross-\/platform family of tools designed to build, test and package software. Basically, cmake reads a script ({\ttfamily CMake\+Lists.\+txt}) with meta-\/information on the project and {\bfseries{creates a Makefile automatically}}, tailored to your system configuration. After that, you may run the {\ttfamily make} command, as usual. Alternatively, the same script might be used to create Xcode projects, Ninja, or Microsoft Visual Studio projects, for instance.
+
+CMake supports {\bfseries{out-\/of-\/source}} build. This means the {\itshape source code} is stored in {\bfseries{one}} folder and the {\itshape generated executable files} should be stored in {\bfseries{another}} folder\+: project should never mix-\/up the source tree with the build tree.
+
+In particular, this project creates a single {\bfseries{target}} (executable), called {\ttfamily run\+\_\+tests}.
+
+But don\textquotesingle{}t worry, they are already set up in the {\ttfamily CMake\+Lists.\+txt} script.
+
+To compile this project with \href{https://cmake.org}{\texttt{ cmake}} follow these steps (from the root folder)\+:
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily cmake -\/S source -\/B build}\+: asks cmake to create the build directory and generate the Unix Makefile based on the script found in {\ttfamily source/\+CMake\+Lists.\+txt}, on the current level.
+\item {\ttfamily cmake -\/-\/build build}\+: triggers the compiling process that creates both targets (executable).D inside {\ttfamily build}.
+\end{DoxyEnumerate}
+
+The executable is created inside the {\ttfamily build} directory.
+
+For further details, please refer to the \href{https://cmake.org/cmake/help/v3.14/manual/cmake.1.html}{\texttt{ cmake documentation website}}.
+
+{\bfseries{NOTE}} however, that this project {\bfseries{may compile at first}} but the tests will most certainly fail.
+
+We have in this project two batches of tests\+: 24 unit tests for the {\ttfamily sc\+::list} class, and 9 unit tests for the {\ttfamily sc\+::list\+::iterator} class, and 22 tests for the utility operations. You should try to get passed all these tests.
+
+To run the tests you have two options\+:
+
+
+\begin{DoxyEnumerate}
+\item Change into the {\ttfamily build} directory with {\ttfamily cd build}, and run the tests with {\ttfamily make run\+\_\+tests}.
+\item Run the tests directly with the command {\ttfamily ./build/tests/all\+\_\+tests} from the root folder of the project.
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md8}{}\doxysubsection{Compiling withou cmake}\label{md_README_autotoc_md8}
+If you wish to compile this project without the cmake, create the {\ttfamily build} folder manually ({\ttfamily mkdir build}), then try to run the command below from the source folder\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -\/Wall -\/std=c++11 -\/I source/include -\/I source/tmanager\_lib source/tests/main.cpp source/tmanager\_lib/test\_manager.cpp -\/o build/run\_tests}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md9}{}\doxysection{Running}\label{md_README_autotoc_md9}
+From the project\textquotesingle{}s root folder, run as usual (assuming {\ttfamily \$} is the terminal prompt)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ ./build/run\_tests}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md10}{}\doxysection{Authorship}\label{md_README_autotoc_md10}
+Program developed by Selan (\href{mailto:selan.santos@ufrn.br}{\texttt{ selan.\+santos@ufrn.\+br}}), 2022.\+1
+
+\copyright{} DIMAp/\+UFRN 2016-\/2022. 
